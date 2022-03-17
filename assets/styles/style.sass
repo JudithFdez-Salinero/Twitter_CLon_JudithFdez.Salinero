@@ -1,0 +1,190 @@
+//*
+//  border: 2px solid tomato
+body
+  @apply bg-gray-900 text-white
+
+.twitter
+  @apply min-h-screen max-w-[1180px] w-full mx-auto
+  @apply grid grid-cols-[250px_1fr_350px] grid-rows-[auto_1fr]  
+  .Logo 
+    @apply flex justify-between items-center mx-2 mx-2
+  .Home 
+    @apply flex justify-between items-center mx-2
+    @apply font-bold 
+    border-left-width: 1px
+    border-right-width: 1px
+    h1
+      @apply ml-4
+    svg
+      @apply mr-4
+.Search 
+  @apply flex justify-between items-center
+  @apply px-4 py-2 bg-slate-800 rounded-full m-2 mx-2
+  .icon
+    i
+      @apply ml-1
+  input
+    @apply w-full bg-transparent ml-4
+
+.no_results
+  visibility: hidden
+  @apply m-4
+  @apply text-sm font-thin text-red-500
+  & .visible
+    visibility: visible
+
+.Nav
+  @apply flex justify-center items-start flex-wrap m-3 mx-2
+  height: 350px
+  max-height: 400px
+  ul
+    width: 100%
+    @apply mb-3
+    li
+      @apply m-3
+      .text_icon
+        @apply flex justify-start items-center
+        i
+          @apply mr-2
+  button 
+    width: 80%
+    border-radius: 100px
+    @apply flex justify-center items-center
+    @apply bg-sky-500 text-white
+    @apply py-1 px-10
+.Feed
+  @apply divide-x divide-gray-400 mx-2
+  border-left-width: 1px
+  border-right-width: 1px
+  .write 
+    @apply grid grid-cols-[70px_1fr] gap-2 justify-center
+    @apply p-2
+    border-bottom-width: 1px
+    img
+      @apply flex justify-center items-center m-2
+      width: 50px
+      circle
+        width: 100px
+    .write_text 
+      @apply my-2 mb-3
+      .enter_text
+        @apply flex flex-col justify-start items-start
+        input
+          @apply m-1 bg-transparent
+          @apply w-full
+          @apply text-base font-thin text-gray-500 
+        .a
+          width: 98%
+          @apply m-1 
+          @apply flex justify-between items-center
+          .icons
+            @apply flex justify-between items-center
+            svg
+              @apply mx-1
+          button
+            @apply px-6 py-1
+            @apply bg-sky-500 rounded-full opacity-50
+            &.twitear
+              @apply opacity-100
+          .tweet_counter
+            @apply opacity-0
+            &.visible
+              @apply opacity-100
+                            
+  .wrote 
+    @apply grid grid-cols-[70px_1fr] gap-2 justify-center
+    @apply p-2 pb-3 
+    border-bottom-width: 2px
+    img
+      @apply flex justify-center items-center m-2
+      width: 50px
+      circle
+        width: 100px
+    .write_text 
+      @apply flex flex-col
+      .user_data
+        width: 100%
+        @apply flex justify-start items-center ml-2
+        h4
+          @apply text-sm font-medium
+        p
+          @apply m-2 
+          @apply text-sm font-thin text-gray-500 
+      .publication
+        @apply m-2 
+        p
+          @apply text-sm font-sans
+        .icons
+          @apply flex justify-start items-center mt-2
+          .icon_number
+            @apply flex justify-center items-center mr-2
+            i
+              @apply m-[2px] text-gray-500
+            p
+              @apply m-[2px]
+              @apply text-xs font-sans text-gray-500
+
+.Hastags
+  @apply flex flex-col justify-start items-start
+  @apply px-4 py-2 bg-slate-800 rounded-xl m-2 mx-2
+  height: 250px
+
+  h2
+    @apply text-base font-medium mt-4 mb-4
+  .terms
+    @apply flex items-center
+    .term
+      @apply flex items-center mb-2
+      i
+        @apply mr-2
+      
+
+
+
+.modal_window
+  @apply bg-sky-400 bg-opacity-5
+  @apply flex justify-center items-center
+  //display: none 
+  position: fixed
+  z-index: 1
+  left: 0
+  top: 0
+  width: 100%
+  height: 100%
+  visibility: hidden
+  &.visible
+    visibility: visible
+  .modal_write 
+    @apply grid grid-cols-[70px_1fr] gap-2 justify-center
+    @apply m-2 bg-gray-900 rounded-xl p-2
+    width: 500px
+    height: 120px
+    max-height: 400px
+    img
+      @apply flex justify-center items-center m-2
+      width: 50px
+      circle
+        width: 100px
+    .write_text 
+      @apply my-2 mb-3
+      .enter_text
+        @apply flex flex-col justify-start items-start
+        input
+          width: 98%
+          @apply m-1 bg-transparent
+          @apply text-base font-thin text-gray-500 
+        .a
+          width: 98%
+          @apply m-1 
+          @apply flex justify-between items-center
+          .icons
+            @apply flex justify-between items-center
+            svg
+              @apply mx-1
+          .tweet_button
+            
+            @apply px-6 py-1
+            @apply bg-sky-500 rounded-full
+            @apply opacity-50
+            &.twitear
+              @apply opacity-100
