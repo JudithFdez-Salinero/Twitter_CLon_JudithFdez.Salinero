@@ -69,11 +69,11 @@ const renderFeed = () => {
 const initEventTweets = () => {
   const tweetsDom = document.querySelectorAll(".wrote")
   tweetsDom.forEach((tD, i) => {
-    const heart = tD.querySelector(".ph-heart")
+    const heart = tD.querySelector(".ph-heart") 
     heart.addEventListener("click", (ev) => {
       tweets.datatweets[i].likes++
-      //heart.addEventListener("click", (ev) => {
-      //tweets.datatweets[i].likes--
+      heart.classList.replace("ph-heart", "ph-heart-fill")
+      console.log("hola")
       renderFeed()
     })
   }),
@@ -162,6 +162,7 @@ const renderfiltered = () => {
   FeedTweet.innerHTML = FeedTweetHTML
   initEventTweets()
 }
+
 const noResults = document.querySelector(".no_results")
 //BUSCADOR DE TWEETS. REUTILIZAS LAS FUNCIONES ANTERIORES 
 const initSearchEvents = () => {
@@ -176,7 +177,7 @@ const initSearchEvents = () => {
         renderfiltered()
       } else {
         noResults.classList.add("visible")
-        renderFeed()
+        //renderFeed()
       }
       //NO SEEEE QUE ESTAAA MAAAAL /&///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     }
@@ -397,6 +398,7 @@ const hideModalCounter = () => {
 
 //TRENDING TOPIC
 window.addEventListener("load", () => {
+  rendertrend
   initRederFeed()
 })
 
