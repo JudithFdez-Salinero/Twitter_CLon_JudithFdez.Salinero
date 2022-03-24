@@ -48,7 +48,7 @@ const renderFeed = () => {
                 <p>${tweets.datatweets[i].retweet}</p>
               </div>
               <div class="icon_number">
-                <i class="ph-heart"></i>
+                <i class="ph-heart ${tweets.datatweets[i].hasbeenlikebyme && "red"}"></i>
                 <p>${tweets.datatweets[i].likes}</p>
               </div>
             </div>
@@ -69,11 +69,21 @@ const renderFeed = () => {
 const initEventTweets = () => {
   const tweetsDom = document.querySelectorAll(".wrote")
   tweetsDom.forEach((tD, i) => {
-    const heart = tD.querySelector(".ph-heart") 
+    const heart = tD.querySelector(".ph-heart")
     heart.addEventListener("click", (ev) => {
-      tweets.datatweets[i].likes++
-      heart.classList.replace("ph-heart", "ph-heart-fill")
-      console.log("hola")
+      if (!tweets.datatweets[i].hasbeenlikebyme) {
+        tweets.datatweets[i].likes++
+        // heart.classList.add("red")
+        tweets.datatweets[i].hasbeenlikebyme = true
+        console.log("hola")
+      } else {
+        tweets.datatweets[i].likes--
+        // heart.classList.replace("ph-heart-fill", "ph-heart")
+        tweets.datatweets[i].hasbeenlikebyme = false
+        console.log("hola")
+      }
+
+
       renderFeed()
     })
   }),
@@ -432,7 +442,7 @@ const initRederFeed = () => {
         return t.tweet.includes(renderDom.value)
       });
       if (filterSearch.length > 0)
-      rendertrend()
+        rendertrend()
     }
   })
 }

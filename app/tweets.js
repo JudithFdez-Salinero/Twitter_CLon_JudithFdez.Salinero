@@ -8,7 +8,8 @@ export const tweets = {
         hours: 2,
         coments: 671,
         retweet: 953,
-        likes: 557
+        likes: 557,
+        hasbeenlikebyme: false
       }, {
         avatar: "https://robohash.org/maioresnemoconsequatur.png?size=50x50&set=set1",
         full_name: "Perico Palotes",

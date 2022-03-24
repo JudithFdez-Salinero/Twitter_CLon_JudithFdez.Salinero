@@ -26,5 +26,13 @@
   "description": "Para empezar tenemos que crear un archivo en la carpeta raíz llamado `.env` <br> En este archivo configuramos todo lo necesario para el despliegue de la aplicación.  ``` GIT_USER=<tu-nombre-en-github> GIT_REPO=<tu-repo> ```",
   "main": "postcss.config.js",
   "author": "Judith Fdez-Salinero",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JudithFdez-Salinero/Twitter_CLon_JudithFdez.Salinero.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JudithFdez-Salinero/Twitter_CLon_JudithFdez.Salinero/issues"
+  },
+  "homepage": "https://github.com/JudithFdez-Salinero/Twitter_CLon_JudithFdez.Salinero#readme"
 }
